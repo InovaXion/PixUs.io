@@ -13,7 +13,7 @@ try {
 $pseudo = $_POST['pseudo'];
 $mdp = $_POST['mdp'];
 
-$req = $bdd->prepare("SELECT * FROM users WHERE pseudo = ?");
+$req = $bdd->prepare("SELECT * FROM users WHERE userName = ?");
 
 $req->execute(array(
     $pseudo
