@@ -64,7 +64,7 @@
               <p class="text-center text-muted">Déjà inscrit ? <a href="../login/login.php">Login</a>
               <hr>
 
-              <form action="../login/loginRedirect.php" method="POST">
+              <form action="login/loginRedirect.php" method="POST">
                 <div class="top-margin">
                 <label>Pseudo<span class="text-danger">*</span></label>
                 <?php 
