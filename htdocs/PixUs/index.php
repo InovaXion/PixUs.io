@@ -63,7 +63,12 @@
               <h3 class="thin text-center">Inscription</h3>
               <p class="text-center text-muted">Déjà inscrit ? <a href="login/login.php">Login</a>
               <hr>
-
+                <?php 
+                if (isset($_GET['error']))
+                {
+                  echo '<span class="text-danger">Tes mots de passe ne correspondent pas ou ton pseudo est déjà pris</span>';
+                };
+                ?>
               <form action="inscription/inscription.php" method="POST">
                 <div class="top-margin">
                   <label>Pseudo</label>
