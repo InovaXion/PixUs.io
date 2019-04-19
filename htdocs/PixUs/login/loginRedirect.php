@@ -32,6 +32,7 @@ if (!$compteExiste) {
         $_SESSION['id'] = $compteExiste['id'];
         $_SESSION['pseudo'] = $compteExiste['userName'];
         $_SESSION['email'] = $compteExiste['email'];
+        $_SESSION['img'] = $compteExiste['profilPicture'];
         header('Location: ../main.php');
     } else {
         header('Location: ../login.php?error2=wrongPassword');

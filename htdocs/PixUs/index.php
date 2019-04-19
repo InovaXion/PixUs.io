@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (isset($_SESSION['pseudo'])){
+    header('Location: main.php');
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,17 +42,6 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link pl-0" href="mainRoom.php">Accueil<span class="sr-only">Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="modificationProfil.php">Profil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="deconnexionUser.php">Déconnexion</a>
-            </li>
-          </ul>
         </div>
         <a style="color: #fed136; font-size: 30px" href="index.php" class="navbar-brand navbar-collapse">PixUs.io</a>
         <div class="navbar-collapse collapse dual-nav w-50 order-2">
