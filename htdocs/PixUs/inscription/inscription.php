@@ -29,7 +29,7 @@ $reponse->execute(array(
 $isUserAvailables = $reponse->fetch();
 
 if ($isUserAvailables or $mdpsimple != $mdpsimple2) {
-    header('Location: inscriptionError.php');
+    header('Location: ../index.php?error=invalidInput');
 } else {
     $crerateUser->execute(array($pseudo, $mdp, $email));
     header('Location: ../login/login.php');
