@@ -61,7 +61,7 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <h3 class="thin text-center">Inscription</h3>
-              <p class="text-center text-muted">Déjà inscrit ? <a href="login/login.php">Login</a>
+              <p class="text-center text-muted">Déjà inscrit ? <a href="login.php">Login</a>
               <hr>
                 <?php 
                 if (isset($_GET['error']))
