@@ -1,17 +1,14 @@
 <?php
 
-
-try {
-    $bdd = new PDO('mysql:host=192.168.1.15;dbname=PixUs.io;charset=utf8', 'root', '');
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+include '../bdd/loginBdd.php';
  
 
 
 
 $pseudo = $_POST['pseudo'];
 $mdp = $_POST['mdp'];
+
+
 
 $req = $bdd->prepare("SELECT * FROM users WHERE userName = ?");
 
@@ -21,7 +18,10 @@ $req->execute(array(
 
 $compteExiste = $req->fetch();
 
+
 $isPasswordCorrect = password_verify($mdp, $compteExiste['userPassword']);
+
+
 
 
 if (!$compteExiste) {
@@ -32,9 +32,9 @@ if (!$compteExiste) {
         $_SESSION['id'] = $compteExiste['id'];
         $_SESSION['pseudo'] = $compteExiste['userName'];
         $_SESSION['email'] = $compteExiste['email'];
-        $_SESSION['img'] = $compteExiste['profilPicture'];
-        header('Location: ../main.php');
+        $_SESSION['bio'] = $compteExiste['bio'];
+        header('Location: loginRedirect2.php');
     } else {
-        header('Location: ../login.php?error2=wrongPassword');
+        header('Location: login.php?error2=wrongPassword');
     }
 }

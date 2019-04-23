@@ -11,17 +11,17 @@
   <title>Agency - Start Bootstrap Theme</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="css/agency.min.css" rel="stylesheet">
+  <link href="../css/agency.min.css" rel="stylesheet">
 
 </head>
 
@@ -35,7 +35,7 @@
         </button>
         <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
         </div>
-        <a style="color: #fed136; font-size: 30px" href="index.php" class="navbar-brand navbar-collapse">PixUs.io</a>
+        <a style="color: #fed136; font-size: 30px" href="../index.php" class="navbar-brand navbar-collapse">PixUs.io</a>
         <div class="navbar-collapse collapse dual-nav w-50 order-2">
         </div>
       </div>
@@ -50,10 +50,10 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <h3 class="thin text-center">Connexion</h3>
-              <p class="text-center text-muted">Déjà inscrit ? <a href="../login/login.php">Login</a>
+              <p class="text-center text-muted">Déjà inscrit ? <a href="login.php">Login</a>
               <hr>
 
-              <form action="login/loginRedirect.php" method="POST">
+              <form action="loginRedirect.php" method="POST">
                 <div class="top-margin">
                 <label>Pseudo<span class="text-danger">*</span></label>
                 <?php 

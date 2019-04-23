@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['pseudo'])){
-    header('Location: main.php');
+    header('Location: main/main.php');
 } 
 ?>
 
@@ -58,7 +58,7 @@ if (isset($_SESSION['pseudo'])){
           <div class="panel panel-default">
             <div class="panel-body">
               <h3 class="thin text-center">Inscription</h3>
-              <p class="text-center text-muted">Déjà inscrit ? <a href="login.php">Login</a>
+              <p class="text-center text-muted">Déjà inscrit ? <a href="login/login.php">Login</a>
               <hr>
                 <?php 
                 if (isset($_GET['error']))
@@ -83,7 +83,7 @@ if (isset($_SESSION['pseudo'])){
                   </div>
                   <div class="col-sm-6">
                     <label>Confirmer Mot de passe <span class="text-danger">*</span></label>
-                    <input name="mdp2" required type="password" class="form-control">
+                    <input required name="mdp2" required type="password" class="form-control">
                   </div>
                 </div>
 
@@ -149,19 +149,19 @@ if (isset($_SESSION['pseudo'])){
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+          <h2 class="section-heading text-uppercase">Notre Team de beau-goss</h2>
           <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-4">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-            <h4>Kay Garland</h4>
+            <img class="mx-auto rounded-circle" src="img/team/4.jpg" alt="">
+            <h4>Mghaoues Mathis</h4>
             <p class="text-muted">Lead Designer</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://twitter.com/M_InovaXion_M">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>

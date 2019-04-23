@@ -1,11 +1,9 @@
 <?php
 
 
-try {
-    $bdd = new PDO('mysql:host=192.168.1.15;dbname=PixUs.io;charset=utf8', 'root', '');
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+
+include '../bdd/loginBdd.php';
+ 
  
 $pseudo = $_POST['pseudo'];
 $mdpsimple = $_POST['mdp'];

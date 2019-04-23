@@ -2,11 +2,8 @@
 session_start();
 
 
-if (isset($_SESSION['pseudo']))
-{
-
-} else {
-  header('Location: login.php');
+if (isset($_SESSION['pseudo'])) { } else {
+  header('Location: ../login.php');
 }
 
 ?>
@@ -24,46 +21,50 @@ if (isset($_SESSION['pseudo']))
   <title>Agency - Start Bootstrap Theme</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="css/agency.min.css" rel="stylesheet">
+  <link href="../css/agency.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 
   <!-- Navbar -->
-    <nav class="navbar navbar-dark navbar-expand-md bg-dark justify-content-between">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link pl-0" href="main.php">Accueil<span class="sr-only">Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profil.php"><?php echo $_SESSION['pseudo'];?></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="deconnexionUser.php">Déconnexion</a>
-            </li>
-          </ul>
-        </div>
-        <a style="color: #fed136; font-size: 30px" href="index.php" class="navbar-brand navbar-collapse">PixUs.io</a>
-        <div class="navbar-collapse collapse dual-nav w-50 order-2">
-        </div>
+  <nav class="navbar navbar-dark navbar-expand-md bg-dark justify-content-between">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../profil/profil.php">
+              <?php
+              if (isset($_SESSION['img'])) {
+                echo "<img id='imgProfile' src=" . $_SESSION['img'] . ">";
+              } else {
+                echo $_SESSION['pseudo'];
+              } ?>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="deconnexionUser.php">Déconnexion</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+      <a style="color: #fed136; font-size: 30px" href="../index.php" class="navbar-brand navbar-collapse">PixUs.io</a>
+      <div class="navbar-collapse collapse dual-nav w-50 order-2">
+      </div>
+    </div>
+  </nav>
   <!-- Navbar -->
 
   <!-- Portfolio Grid -->
@@ -83,7 +84,7 @@ if (isset($_SESSION['pseudo']))
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="../img/portfolio/01-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Threads</h4>
@@ -97,7 +98,7 @@ if (isset($_SESSION['pseudo']))
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="../img/portfolio/02-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Explore</h4>
@@ -111,7 +112,7 @@ if (isset($_SESSION['pseudo']))
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="../img/portfolio/03-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Finish</h4>
@@ -125,7 +126,7 @@ if (isset($_SESSION['pseudo']))
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="../img/portfolio/04-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Lines</h4>
@@ -139,7 +140,7 @@ if (isset($_SESSION['pseudo']))
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="../img/portfolio/05-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Southwest</h4>
@@ -153,7 +154,7 @@ if (isset($_SESSION['pseudo']))
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="../img/portfolio/06-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Window</h4>
@@ -223,7 +224,7 @@ if (isset($_SESSION['pseudo']))
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Project Name</h2>
                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                <img class="img-fluid d-block mx-auto" src="../img/portfolio/01-full.jpg" alt="">
                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                 <ul class="list-inline">
                   <li>Date: January 2017</li>
@@ -257,7 +258,7 @@ if (isset($_SESSION['pseudo']))
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Project Name</h2>
                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
+                <img class="img-fluid d-block mx-auto" src="../img/portfolio/02-full.jpg" alt="">
                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                 <ul class="list-inline">
                   <li>Date: January 2017</li>
@@ -291,7 +292,7 @@ if (isset($_SESSION['pseudo']))
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Project Name</h2>
                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+                <img class="img-fluid d-block mx-auto" src="../img/portfolio/03-full.jpg" alt="">
                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                 <ul class="list-inline">
                   <li>Date: January 2017</li>
@@ -325,7 +326,7 @@ if (isset($_SESSION['pseudo']))
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Project Name</h2>
                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+                <img class="img-fluid d-block mx-auto" src="../img/portfolio/04-full.jpg" alt="">
                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                 <ul class="list-inline">
                   <li>Date: January 2017</li>
@@ -359,7 +360,7 @@ if (isset($_SESSION['pseudo']))
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Project Name</h2>
                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
+                <img class="img-fluid d-block mx-auto" src="../img/portfolio/05-full.jpg" alt="">
                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                 <ul class="list-inline">
                   <li>Date: January 2017</li>
@@ -393,7 +394,7 @@ if (isset($_SESSION['pseudo']))
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Project Name</h2>
                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
+                <img class="img-fluid d-block mx-auto" src="../img/portfolio/06-full.jpg" alt="">
                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                 <ul class="list-inline">
                   <li>Date: January 2017</li>
@@ -412,18 +413,18 @@ if (isset($_SESSION['pseudo']))
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Contact form JavaScript -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
+  <script src="../js/jqBootstrapValidation.js"></script>
+  <script src="../js/contact_me.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/agency.min.js"></script>
+  <script src="../js/agency.min.js"></script>
 
 </body>
 
