@@ -1,6 +1,14 @@
 <?php
 session_start();
 
+
+if (isset($_SESSION['pseudo']))
+{
+
+} else {
+  header('Location: login.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +52,7 @@ session_start();
               <a class="nav-link pl-0" href="main.php">Accueil<span class="sr-only">Home</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="profil.php">Profil</a>
+              <a class="nav-link" href="profil.php"><?php echo $_SESSION['pseudo'];?></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="deconnexionUser.php">Déconnexion</a>
