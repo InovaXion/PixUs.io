@@ -4,15 +4,14 @@ session_start();
 
 include '../bdd/loginBdd.php';
  
-
-/* $idUser=$_SESSION['id'];
+$idUser=$_SESSION['id'];
 
 
 //envoi l'image importé par l'user vers notre img
 
-$uploads_dir= '../img/Pictures';
-$name = $_SESSION['id'].$_FILES['profilPicture']['name'];
-$tmp_name = $_FILES["profilPicture"]["tmp_name"];
+$uploads_dir= '../img/pictures';
+$name = $_SESSION['id'].$_FILES['userPicture']['name'];
+$tmp_name = $_FILES["userPicture"]["tmp_name"];
 move_uploaded_file($tmp_name, "$uploads_dir/$name");
 
 
@@ -28,20 +27,21 @@ $req->execute(array(
     $imgPath
 ));
 
-//on recupère toutes les infos de l'image qui vient d'être enregistré dans la bdd
+/* //on recupère toutes les infos de l'image qui vient d'être enregistré dans la bdd
 $userPicture= $bdd->prepare('SELECT * FROM images WHERE imgFilePath= ?');
 
 $userPicture->execute(array(
   $imgPath
 ));
 $picture = $profilPicture->fetch();
+
  */
-echo "salut";
 
 /* //on enregistre dans la table user l'id de la photo de profil
 $req = $bdd->prepare("UPDATE users SET idProfilPicture= ? WHERE id= $idUser");
 $req->execute(array(
     $picture['id']
-)); */
+));  */
+header('Location: profil.php');
 
 

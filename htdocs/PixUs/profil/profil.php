@@ -27,6 +27,14 @@ $reponse = $bdd->query("SELECT * FROM images
 
 $profilPicture = $reponse->fetch();
 
+
+//On récupère toutes les photo uploader par l'user
+$reponse = $bdd->query("SELECT * FROM images 
+                        INNER JOIN users 
+                        WHERE images.idUser = $pseudoID");
+
+$userPicture = $reponse->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -110,6 +118,8 @@ $profilPicture = $reponse->fetch();
           <?php echo "<h3> Bio : </h3><p>" . $infosProfil['bio'] . "</p>" ?>
           <form action="profilBioRedirect.php" method="POST">
             <input type="text" name="bio">
+            <input type="submit" value="Valider" />
+                                            </form>
             <p>Modifie ta bio </p>
         </div>
       </div>
@@ -117,45 +127,50 @@ $profilPicture = $reponse->fetch();
     </div>
   </section>
 
-
-
-
-
-
   <!-- Portfolio Grid -->
   <section class="bg-light" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
 
-          <form enctype="multipart/form-data" action="test.php" method="post">
-             <label for="userPicture"> Uploader une photo </label>
-              <input name="userPicture" type="file" /><br> 
-              <input type="submit" value="Valider" />
-            </form>
-
+        <form enctype="multipart/form-data" action="userPictureRedirection.php" method="post">
+            <label for="userPicture"> Changer de photo de profil </label>
+            <input name="userPicture" type="file" /><br>
+            <input type="submit" value="Valider" />
+          </form>
            
-
-
           <h2 class="section-heading text-uppercase">Mes photos</h2>
           <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
       </div>
+      
       <div class="row">
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fas fa-plus fa-3x"></i>
+
+      <?php
+          //boucle d'affichage des photos
+                        foreach ($userPicture as $picture) {
+                            echo "
+                            
+                            <div class='col-md-4 col-sm-6 portfolio-item'>
+          <a class='portfolio-link' data-toggle='modal' href='#portfolioModal1'>
+            <div class='portfolio-hover'>
+              <div class='portfolio-hover-content'>
+                <i class='fas fa-plus fa-3x'></i>
               </div>
             </div>
-            <img class="img-fluid" src="../img/portfolio/01-thumbnail.jpg" alt="">
+            <img class='img-fluid' src=". $picture['imgFilePath']."alt=''>
           </a>
-          <div class="portfolio-caption">
+          <div class='portfolio-caption'>
             <h4>Threads</h4>
-            <p class="text-muted">Illustration</p>
+            <p class='text-muted'>Illustration</p>
           </div>
-        </div>
+        </div>";
+        var_dump($picture['imgFilePath']);
+        }
+        
+?>
+
+<!--         
         <div class="col-md-4 col-sm-6 portfolio-item">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
             <div class="portfolio-hover">
@@ -225,7 +240,7 @@ $profilPicture = $reponse->fetch();
             <h4>Window</h4>
             <p class="text-muted">Photography</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
