@@ -154,11 +154,11 @@ if (isset($_SESSION['pseudo'])){
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/4.jpg" alt="">
+            <img class="mx-auto rounded-circle" src="https://pbs.twimg.com/profile_images/950707603981651970/rNQ6TC7J_400x400.jpg" alt="">
             <h4>Mghaoues Mathis</h4>
-            <p class="text-muted">Lead Designer</p>
+            <p class="text-muted">Fondateur</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="https://twitter.com/M_InovaXion_M">
@@ -166,60 +166,31 @@ if (isset($_SESSION['pseudo'])){
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://fr-fr.facebook.com/M.InovaXion.M">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.linkedin.com/in/mathis-mghaoues-152332185/">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-            <h4>Larry Parker</h4>
-            <p class="text-muted">Lead Marketer</p>
+            <img class="mx-auto rounded-circle" src="https://scontent-mrs1-1.xx.fbcdn.net/v/t1.0-9/10389995_806031016097846_1754171224515305259_n.jpg?_nc_cat=108&_nc_ht=scontent-mrs1-1.xx&oh=09b1675e7f26ebe0ffd56a35785ce91e&oe=5D2B2492" alt="">
+            <h4>Mickael Wala</h4>
+            <p class="text-muted">Fondateur</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.facebook.com/mickael.wala">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-            <h4>Diana Pertersen</h4>
-            <p class="text-muted">Lead Developer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.linkedin.com/in/micka%C3%ABl-wala-13081994/">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>

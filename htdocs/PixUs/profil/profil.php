@@ -2,12 +2,12 @@
 session_start();
 
 
-if (isset($_SESSION['pseudo'])) { } else {
-  header('Location: ../login/login.php');
-}
+// if (isset($_SESSION['pseudo'])) { } else {
+//   header('Location: ../login/login.php');
+// }
 
 include '../bdd/loginBdd.php';
- 
+
 
 
 //On récupère toutes les infos de l'user qui est connecté sur sa session
@@ -67,7 +67,7 @@ $profilPicture = $reponse->fetch();
       <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
         <ul class="navbar-nav">
           <li class="nav-item">
-          <a class="nav-link" href="../profil/profil.php">
+            <a class="nav-link" href="../profil/profil.php">
               <?php
               if (isset($_SESSION['img'])) {
                 echo "<img id='imgProfile' src=" . $_SESSION['img'] . ">";
@@ -92,11 +92,10 @@ $profilPicture = $reponse->fetch();
     <div class="container">
       <div class="row">
         <div class="col-md-4 text-center"> <?php
-            if (isset($_SESSION['img']))
-            {
-              echo "<img class='profilPicture' src=" . $_SESSION['img'] . ">" ;
-            }
-            ?>
+                                            if (isset($_SESSION['img'])) {
+                                                echo "<img class='profilPicture' src=" . $_SESSION['img'] . ">";
+                                              }
+                                            ?>
 
           <form enctype="multipart/form-data" action="profilPictureRedirection.php" method="post">
             <label for="profilPicture"> Changer de photo de profil </label>
@@ -122,17 +121,21 @@ $profilPicture = $reponse->fetch();
 
 
 
+
   <!-- Portfolio Grid -->
   <section class="bg-light" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
 
-          <form enctype="multipart/form-data" action="userPictureRedirection.php" method="post">
-              <label for="userPicture"> Uploader une photo </label>
-              <input name="userPicture" type="file" /><br>
+          <form enctype="multipart/form-data" action="test.php" method="post">
+             <label for="userPicture"> Uploader une photo </label>
+              <input name="userPicture" type="file" /><br> 
               <input type="submit" value="Valider" />
             </form>
+
+           
+
 
           <h2 class="section-heading text-uppercase">Mes photos</h2>
           <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>

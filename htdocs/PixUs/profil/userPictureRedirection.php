@@ -44,4 +44,4 @@ $req->execute(array(
     $picture['id']
 )); */
 
-/* header('Location: profil.php'); */
+
