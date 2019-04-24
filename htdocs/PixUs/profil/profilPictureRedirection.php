@@ -20,10 +20,7 @@ $profilPicture= $bdd->prepare('SELECT * FROM images WHERE imgFilePath= ?');
 $reponse = $bdd->prepare("UPDATE users SET idProfilPicture= ? WHERE id= $idUser");
 
 
-
-
-
-
+//on vérifie que l'image est au bon format 
 if ($_FILES['profilPicture']['type'] != "image/jpeg" && $_FILES['profilPicture']['type'] != "image/png"  ){
     header('Location: profil.php?error=invalidInput'); 
 

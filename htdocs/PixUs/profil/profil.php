@@ -138,7 +138,7 @@ $userPicture = $reponse->fetchAll();
         <div class="col-lg-12 text-center">
           <div class="container">
             <div class="row col-12 align-items-center justify-content-center">
-              <div class="col-6 form-group">
+              <div class="col-sm-6 form-group">
                 <div class="panel panel-default">
                   <div class="panel-body">
                     <h3 class="thin text-center">Upload Photo</h3>
@@ -249,7 +249,6 @@ $userPicture = $reponse->fetchAll();
                 <input type='hidden' name='idPhoto' value=\"" . $picture['id'] . "\">
                 <input class=\"btn btn-danger\" type=\"submit\" value=\"Supprimer photo\" />
               </form>
-                
                 
               </div>
             </div>
