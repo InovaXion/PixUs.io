@@ -6,6 +6,14 @@ if (isset($_SESSION['pseudo'])) { } else {
   header('Location: ../login.php');
 }
 
+include '../bdd/loginBdd.php';
+
+
+$reponse = $bdd->query("SELECT * FROM images WHERE imgDate != ''");
+
+$userPicture = $reponse->fetchAll();
+
+
 ?>
 
 <!DOCTYPE html>

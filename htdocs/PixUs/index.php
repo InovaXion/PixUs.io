@@ -149,7 +149,7 @@ if (isset($_SESSION['pseudo'])){
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Notre Team de beau-goss</h2>
+          <h2 class="section-heading text-uppercase">Notre Team</h2>
           <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
       </div>
@@ -161,17 +161,17 @@ if (isset($_SESSION['pseudo'])){
             <p class="text-muted">Fondateur</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="https://twitter.com/M_InovaXion_M">
+                <a target="_blank" href="https://twitter.com/M_InovaXion_M">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://fr-fr.facebook.com/M.InovaXion.M">
+                <a target="_blank" href="https://fr-fr.facebook.com/M.InovaXion.M">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/mathis-mghaoues-152332185/">
+                <a target="_blank" href="https://www.linkedin.com/in/mathis-mghaoues-152332185/">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
@@ -185,12 +185,12 @@ if (isset($_SESSION['pseudo'])){
             <p class="text-muted">Fondateur</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="https://www.facebook.com/mickael.wala">
+                <a target="_blank" href="https://www.facebook.com/mickael.wala">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/micka%C3%ABl-wala-13081994/">
+                <a target="_blank" href="https://www.linkedin.com/in/micka%C3%ABl-wala-13081994/">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>

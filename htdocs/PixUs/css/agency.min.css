@@ -219,13 +219,14 @@ header.masthead .intro-text .intro-heading {
 
 #portfolio .portfolio-item {
     right: 0;
-    margin: 0 0 15px
+    margin: 0 0 15px;
+
 }
 
 #portfolio .portfolio-item .portfolio-link {
     position: relative;
     display: block;
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
     cursor: pointer
 }
@@ -298,13 +299,11 @@ header.masthead .intro-text .intro-heading {
 }
 
 .portfolio-modal .modal-dialog {
-    margin: 1rem;
-    max-width: 100vw
+    max-width: 50vw
 }
 
 .portfolio-modal .modal-content {
-    padding: 100px 0;
-    text-align: center
+    text-align: center;
 }
 
 .portfolio-modal .modal-content h2 {
@@ -710,4 +709,16 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 .sectionProfil{
     padding : 50px;
     background-color : grey;
+}
+
+.sectionUpdate {
+
+    padding : 50px;
+}
+
+.imgTest{
+    max-height: 300;
+    max-width: 225;
+
+
 }
