@@ -35,7 +35,7 @@
         </button>
         <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
         </div>
-        <a style="color: #fed136; font-size: 30px" href="../index.php" class="navbar-brand navbar-collapse">PixUs.io</a>
+        <a style="color: #fed136; font-size: 30px" href="../index.php" class="navbar-brand navbar-collapse">PixUs</a>
         <div class="navbar-collapse collapse dual-nav w-50 order-2">
         </div>
       </div>

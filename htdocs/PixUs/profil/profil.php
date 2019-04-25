@@ -2,9 +2,9 @@
 session_start();
 
 
-// if (isset($_SESSION['pseudo'])) { } else {
-//   header('Location: ../login/login.php');
-// }
+if (isset($_SESSION['pseudo'])) { } else {
+  header('Location: ../login/login.php');
+}
 
 include '../bdd/loginBdd.php';
 
@@ -32,6 +32,10 @@ $profilPicture = $reponse->fetch();
 $reponse = $bdd->query("SELECT * FROM images WHERE idUser = $pseudoID AND imgTitle !='' ");
 
 $userPicture = $reponse->fetchAll();
+
+$reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments  WHERE idPicture = ?');
+
+
 
 
 ?>
@@ -88,7 +92,7 @@ $userPicture = $reponse->fetchAll();
           </li>
         </ul>
       </div>
-      <a style="color: #fed136; font-size: 30px" href="../index.php" class="navbar-brand navbar-collapse">PixUs.io</a>
+      <a style="color: #fed136; font-size: 30px" href="../index.php" class="navbar-brand navbar-collapse">PixUs</a>
       <div class="navbar-collapse collapse dual-nav w-50 order-2">
       </div>
     </div>
@@ -234,14 +238,33 @@ $userPicture = $reponse->fetchAll();
         </div>
         <div class='container'>
           <div class='row'>
-            <div class='col-lg-8 mx-auto'>
+            <div class='col-lg-12 mx-auto'>
               <div class='modal-body'>
-                <!-- Project Details Go Here -->
                 <h2>" . $picture['imgTitle'] . "</h2>
                 <p class='item-intro text-muted'>" . $picture['imgDescription'] . "</p>
                 <img class='img-fluid d-block mx-auto' src=\"" . $picture['imgFilePath'] . "\" alt=''>
-                <p>test commentaire</p>
+                <hr class='test'>
+              <h3>Commentaires</h3>
+              <div class='comments col-lg-12 mx-auto'>";
+
+              $reponse2->execute(array(
+                $picture['id']
+              ));
+              while ($donnees = $reponse2->fetch())
+              {
+                echo "<em>".$donnees['commentDate']."</em> &nbsp;&nbsp;&nbsp;"."<strong>" . $donnees['userName'] ."</strong> : ". $donnees['comment'] . "<br>";
+               
+              }
+
+              
+              echo "</div>
+              <hr class='test'>
                 <ul class='list-inline'>
+                <form action=\"commentRedirections2.php\" method=\"POST\">
+              <input type='hidden' name='idPicture' value=\"" . $picture['id'] . "\">
+              <input required type=\"text\" name=\"commentaire\"><br><br>
+              <input class=\"btn btn-danger\" type=\"submit\" value=\"Ajouter un commentaire\" />
+              </form>
                   <li>Date: " . $picture['imgDate'] . "</li>
                 </ul>
                 
@@ -260,6 +283,7 @@ $userPicture = $reponse->fetchAll();
   };
 
   ?>
+
 
 
   <!-- Footer -->

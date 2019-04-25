@@ -18,4 +18,4 @@ $req->execute(array(
     $comment
             ));
 
-header('Location: main.php');
+header('Location: profil.php');

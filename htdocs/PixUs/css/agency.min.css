@@ -294,13 +294,20 @@ header.masthead .intro-text .intro-heading {
 }
 
 .portfolio-modal {
-    padding-right: 0!important
+    padding-right: 0!important;
 }
+
+
 
 .portfolio-modal .modal-dialog {
     max-width: 50vw
 }
 
+@media (max-width:1024px) {
+    .portfolio-modal .modal-dialog{
+        max-width: 100vw
+    }
+}
 .portfolio-modal .modal-content {
     text-align: center;
 }
@@ -366,6 +373,8 @@ header.masthead .intro-text .intro-heading {
     transform: rotate(90deg);
     background-color: #212529
 }
+
+
 
 .timeline {
     position: relative;
@@ -721,3 +730,13 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 
 
 }
+
+.comments{
+    overflow-y: auto;
+    max-height: 125px;
+}
+
+.test{
+    border: 2px solid grey;
+}
+

@@ -43,7 +43,7 @@ if (isset($_SESSION['pseudo'])){
         </button>
         <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
         </div>
-        <a style="color: #fed136; font-size: 30px" href="index.php" class="navbar-brand navbar-collapse">PixUs.io</a>
+        <a style="color: #fed136; font-size: 30px" href="index.php" class="navbar-brand navbar-collapse">PixUs</a>
         <div class="navbar-collapse collapse dual-nav w-50 order-2">
         </div>
       </div>
@@ -110,34 +110,30 @@ if (isset($_SESSION['pseudo'])){
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Services</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">PixUs.io</h2>
+          <h3 class="section-subheading text-muted">Un site sympa et simple pour partager au monde mentier vos plus beau clichés !</h3>
         </div>
       </div>
       <div class="row text-center">
         <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">E-Commerce</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <img src="img/picture.png" alt="">
+          <h4 class="service-heading">Photo</h4>
+          <p class="text-muted">Sur PixUs, partagez vos photos au monde entier ! Mettez les en valeur en les publaint sur votre compte !</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+             <i class="fas fa-circle fa-stack-2x text-primary"></i>
+             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i> 
           </span>
-          <h4 class="service-heading">Responsive Design</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Responsivité</h4>
+          <p class="text-muted">PixUs est disponible sur tous les écrans ! Envoyez et consulter vos photos depuis votre ordinateur, votre tablette ou votre smartphone !</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+            <img src="img/heart.png" alt="">
           </span>
-          <h4 class="service-heading">Web Security</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Comment & Like </h4>
+          <p class="text-muted">Commentez et likez les photos des autres utilisateurs de la communauté PixUs !</p>
         </div>
       </div>
     </div>
@@ -150,7 +146,7 @@ if (isset($_SESSION['pseudo'])){
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Notre Team</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted">Les deux personnes à l'origine de ce projet</h3>
         </div>
       </div>
       <div class="row">
@@ -200,7 +196,8 @@ if (isset($_SESSION['pseudo'])){
       </div>
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+          <p class="large text-muted">Projet qui a été effectuer dans le cadre de la formation Simplon</p>
+          <a href="https://simplon.co/roanne/"target="_blank" rel="noopener noreferrer"><img src="https://simplon.co/wp-content/uploads/2019/01/logo-simplon_roanne.png" alt=""></a>
         </div>
       </div>
     </div>

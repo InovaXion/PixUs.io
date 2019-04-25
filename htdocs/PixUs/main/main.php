@@ -14,41 +14,44 @@ include '../bdd/loginBdd.php';
                         AND imgTitle != ''
                         AND images.idUser = users.id");
 
-$userPicture = $reponse->fetchAll(); */
 
-$reponse = $bdd->query("SELECT * FROM images WHERE imgDate != '' AND imgTitle != ''");
+                        UNION ALL
+                        SELECT * FROM comments 
+                        INNER JOIN images 
+                        WHERE comments.idPicture = images.id
+
+ */
+
+$reponse = $bdd->query("SELECT * FROM images WHERE imgDate != '' AND imgTitle != '' ORDER BY imgDate DESC");
 
 $userPicture = $reponse->fetchAll();
 
-// faux car ne pas faire select ALL aller sur https://openclassrooms.com/fr/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql/1965156-union-de-plusieurs-requetes
+// Sélectionne toutes les photos qui on été posté pour le fil d'actualité
 $reponse = $bdd->query("SELECT * FROM images 
                         INNER JOIN users 
                         WHERE imgDate != '' 
                         AND imgTitle != '' 
                         AND images.idUser = users.id
-                        UNION ALL
-                        SELECT * FROM comments 
-                        INNER JOIN images 
-                        WHERE comments.idPicture = images.id");
+                       ");
 
 $userNames = $reponse->fetchAll();
 
+//On prépare les commentaires, le nom de l'user et la date du commentaire
+$reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments  WHERE idPicture = ?');
 
-// foreach ($userNames as $userName) {
-// echo $userName['idPicture'];
-// echo "<br>";
-// } 
 
-$reponse = $bdd->query("SELECT * FROM comments INNER JOIN images WHERE comments.idPicture = images.id");
+$reponse4 = $bdd->prepare('SELECT imgLikes FROM images WHERE images.id = ?')
 
-$tests = $reponse->fetchAll();
 
-echo '<pre>' . var_export($userNames, true) . '</pre>';
-echo "<br>";
-foreach ($tests as $test){
-  echo $test['comment'];
-  echo "<br>";
-}
+// echo '<pre>' . var_export($selectCommentByUser['userName'], true) . '</pre>';
+
+
+
+
+
+
+
+
 
 ?>
 
@@ -104,7 +107,7 @@ foreach ($tests as $test){
           </li>
         </ul>
       </div>
-      <a style="color: #fed136; font-size: 30px" href="../index.php" class="navbar-brand navbar-collapse">PixUs.io</a>
+      <a style="color: #fed136; font-size: 30px" href="../index.php" class="navbar-brand navbar-collapse">PixUs</a>
       <div class="navbar-collapse collapse dual-nav w-50 order-2">
       </div>
     </div>
@@ -146,14 +149,11 @@ foreach ($tests as $test){
 
   <?php
 
-// Boucle d'affichage des modals 
+  // Boucle d'affichage des modals 
 
-foreach($userNames as $userName){
-    if ($userName['0'] == $userName['idPicture']){
-      $comment=$userName['comment'];
-    };
-    
-  echo "<div class='portfolio-modal modal fade' id='portfolioModal" . $userName['0'] . "' tabindex='-1' role='dialog' aria-hidden='true'>
+  foreach ($userNames as $userName) {
+
+    echo "<div class='portfolio-modal modal fade' id='portfolioModal" . $userName['0'] . "' tabindex='-1' role='dialog' aria-hidden='true'>
   <div class='modal-dialog'>
     <div class='modal-content'>
       <div class='close-modal' data-dismiss='modal'>
@@ -163,18 +163,45 @@ foreach($userNames as $userName){
       </div>
       <div class='container'>
         <div class='row'>
-          <div class='col-lg-8 mx-auto'>
+          <div class='col-lg-12 mx-auto'>
             <div class='modal-body'>
-              <!-- Project Details Go Here -->
               <h2>" . $userName['imgTitle'] . "</h2>
-              ". $comment ."
-              <p class='item-intro text-muted'>" . $userName['imgDescription'] . "</p>
-              <img class='img-fluid d-block mx-auto' src=\"" . $userName['imgFilePath'] . "\" alt=''><hr>
+              <p class='item-intro text-muted'>" . $userName['imgDescription'] . "</p>";
+
+              $reponse4->execute(array(
+                $userName['0']
+              ));
+              while ($donnees = $reponse4->fetch())
+              {
+                echo "<div class=''>  <form action='likePictureRedirection.php' method='POST'><input type='image' name='imgLikes' src='../img/like.png'>" .$donnees['imgLikes'].
+                "<input type='hidden' name='idPictures' value=\"" . $userName['0'] . "\"></form></div>";
+               
+              }
+
+              
+              echo "
+              <img class='img-fluid d-block mx-auto' src=\"" . $userName['imgFilePath'] . "\" alt=''>
+              <hr class='test'>
+              <h3>Commentaires</h3>
+              <div class='comments col-lg-12 mx-auto'>";
+
+              $reponse2->execute(array(
+                $userName['0']
+              ));
+              while ($donnees = $reponse2->fetch())
+              {
+                echo "<em>".$donnees['commentDate']."</em> &nbsp;&nbsp;&nbsp;"."<strong>" . $donnees['userName'] ."</strong> : ". $donnees['comment'] . "<br>";
+               
+              }
+
+              
+              echo "</div>
+              <hr class='test'>
               <ul class='list-inline'>
               <form action=\"commentRedirections.php\" method=\"POST\">
               <input type='hidden' name='idPicture' value=\"" . $userName['0'] . "\">
               <input required type=\"text\" name=\"commentaire\"><br><br>
-              <input class=\"btn btn-danger\" type=\"submit\" value=\"Ajouter commentaire\" />
+              <input class=\"btn btn-danger\" type=\"submit\" value=\"Ajouter un commentaire\" />
               </form>
               <li>Posté par : <a href=\"test.php\">" . $userName['userName'] . "</a></li>
                 <li>le : " . $userName['imgDate'] . "</li>
@@ -186,11 +213,11 @@ foreach($userNames as $userName){
     </div>
   </div>
 </div>";
-};
+  };
 
   ?>
 
-  
+
 
 
   <!-- Footer -->
@@ -246,6 +273,8 @@ foreach($userNames as $userName){
 
   <!-- Custom scripts for this template -->
   <script src="../js/agency.min.js"></script>
+
+  <script src="../js.testJS.js"></script>
 
 </body>
 
