@@ -58,7 +58,7 @@ if (isset($_SESSION['pseudo'])){
           <div class="panel panel-default">
             <div class="panel-body">
               <h3 class="thin text-center">Inscription</h3>
-              <p class="text-center text-muted">Déjà inscrit ? <a href="login/login.php">Login</a>
+              <p class="text-center">Déjà inscrit ? <a href="login/login.php">Login</a>
               <hr>
                 <?php 
                 if (isset($_GET['error']))
@@ -93,7 +93,7 @@ if (isset($_SESSION['pseudo'])){
                   <div class="col-lg-8">
                   </div>
                   <div class="col-lg-4 text-right">
-                    <button class="btn btn-danger" type="submit">Register</button>
+                    <button class="btn btn-warning" type="submit">Register</button>
                   </div>
                 </div>
               </form>
@@ -110,8 +110,8 @@ if (isset($_SESSION['pseudo'])){
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">PixUs.io</h2>
-          <h3 class="section-subheading text-muted">Un site sympa et simple pour partager au monde mentier vos plus beau clichés !</h3>
+          <h2 class="section-heading text-uppercase">PixUs</h2>
+          <h3 class="section-subheading text-muted">Un site sympa et simple pour partager au monde entier vos plus beau clichés !</h3>
         </div>
       </div>
       <div class="row text-center">
@@ -176,7 +176,7 @@ if (isset($_SESSION['pseudo'])){
         </div>
         <div class="col-sm-6">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="https://scontent-mrs1-1.xx.fbcdn.net/v/t1.0-9/10389995_806031016097846_1754171224515305259_n.jpg?_nc_cat=108&_nc_ht=scontent-mrs1-1.xx&oh=09b1675e7f26ebe0ffd56a35785ce91e&oe=5D2B2492" alt="">
+            <img class="mx-auto rounded-circle" src="img/profilPictures/1mika.jpeg" alt="">
             <h4>Mickael Wala</h4>
             <p class="text-muted">Fondateur</p>
             <ul class="list-inline social-buttons">
@@ -204,44 +204,10 @@ if (isset($_SESSION['pseudo'])){
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Your Website 2019</span>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline quicklinks">
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <?php
+  include 'footer.php';
+  ?>
+
 
 
   <!-- Bootstrap core JavaScript -->

@@ -5,7 +5,7 @@ include '../bdd/loginBdd.php';
 
 $userName = $_SESSION['pseudo'];
 $idUser= $_SESSION['id'];
-$comment= $_POST['commentaire'];
+$comment= htmlspecialchars($_POST['commentaire']);
 $idPicture= $_POST['idPicture'];
 
 $req=$bdd->prepare('INSERT INTO comments (idPicture, idUser, userName, comment, commentDate)

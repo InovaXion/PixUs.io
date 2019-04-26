@@ -6,7 +6,7 @@ include '../bdd/loginBdd.php';
  
 
 $pseudoID = $_SESSION['id'];
-$bio = $_POST['bio'];
+$bio =  htmlspecialchars($_POST['bio']);
 
 $req = $bdd->prepare("UPDATE users SET bio = ? WHERE id= $pseudoID");
 

@@ -5,8 +5,8 @@ include '../bdd/loginBdd.php';
 
 
 
-$pseudo = $_POST['pseudo'];
-$mdp = $_POST['mdp'];
+$pseudo = htmlspecialchars($_POST['pseudo']);
+$mdp = htmlspecialchars($_POST['mdp']);
 
 
 

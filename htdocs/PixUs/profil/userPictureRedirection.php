@@ -7,8 +7,8 @@ include '../bdd/loginBdd.php';
 $idUser=$_SESSION['id'];
 
 // Récupérer les données du formulaire
-$imgTitle = $_POST['titlePicture'];
-$imgDescription = $_POST['descriptionPicture'];
+$imgTitle = htmlspecialchars($_POST['titlePicture']);
+$imgDescription = htmlspecialchars($_POST['descriptionPicture']);
 $idUser=$_SESSION['id'];
 
 

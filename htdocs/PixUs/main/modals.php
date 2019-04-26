@@ -48,10 +48,16 @@ echo "<div class='portfolio-modal modal fade' id='portfolioModal" . $userName['0
               <form action=\"commentRedirections.php\" method=\"POST\">
               <input type='hidden' name='idPicture' value=\"" . $userName['0'] . "\">
               <input required type=\"text\" name=\"commentaire\"><br><br>
-              <input class=\"btn btn-danger\" type=\"submit\" value=\"Ajouter un commentaire\" />
+              <input class=\"btn btn-warning\" type=\"submit\" value=\"Ajouter un commentaire\" />
               </form>
-              <li>Posté par : <a href=\"test.php\">" . $userName['userName'] . "</a></li>
-                <li>le : " . $userName['imgDate'] . "</li>
+              <li> Posté par : <strong>" . $userName['userName'] . "</strong></li>
+              <li>le : " . $userName['imgDate'] . "</li>
+
+              <form action=\"../profil/userProfil.php\" method=\"POST\">
+              <input type='hidden' name='nameUserPicture' value=\"" . $userName['userName'] . "\">
+              <input class=\"btn btn-warning\" type=\"submit\" value=\"Voir le profil de " . $userName['userName'] . "\" />
+              </form>
+            
               </ul>
             </div>
           </div>

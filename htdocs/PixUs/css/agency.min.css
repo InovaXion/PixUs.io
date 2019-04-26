@@ -6,7 +6,8 @@
 
 body {
     overflow-x: hidden;
-    font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+    font-family: 'Raleway', sans-serif;
+    
 }
 
 p {
@@ -219,14 +220,17 @@ header.masthead .intro-text .intro-heading {
 
 #portfolio .portfolio-item {
     right: 0;
-    margin: 0 0 15px;
-
+    margin: 0px;
+    padding: 0px;
+    
+    
 }
+
 
 #portfolio .portfolio-item .portfolio-link {
     position: relative;
     display: block;
-    max-width: 300px;
+    max-width: 95%;
     margin: 0 auto;
     cursor: pointer
 }
@@ -284,7 +288,10 @@ header.masthead .intro-text .intro-heading {
 }
 
 #portfolio * {
-    z-index: 2
+    z-index: 2;
+
+    
+
 }
 
 @media (min-width:767px) {
@@ -740,3 +747,30 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
     border: 2px solid #343a40;
 }
 
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row2 {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
+}
+
+.item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  100%; 
+}
+
+  
+
+.well {
+ position:relative;
+ display: block;
+}
+img {
+  max-width: 300px;
+}

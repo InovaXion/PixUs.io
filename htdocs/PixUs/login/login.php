@@ -50,7 +50,7 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <h3 class="thin text-center">Connexion</h3>
-              <p class="text-center text-muted">Tu es nouveau? Inscris-toi ? <a href="../index.php">Inscription</a>
+              <p class="text-center " >Tu es nouveau? Inscris-toi ? <a href="../index.php">Inscription</a>
               <hr>
 
               <form action="loginRedirect.php" method="POST">
@@ -80,7 +80,7 @@
                   <div class="col-lg-8">
                   </div>
                   <div class="col-lg-4 text-right">
-                    <button class="btn btn-danger" type="submit">Register</button>
+                    <button class="btn btn-warning" type="submit">Register</button>
                   </div>
                 </div>
               </form>
@@ -157,44 +157,10 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark">
-    <div class="container ">
-      <div class="row">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Your Website 2019</span>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline quicklinks">
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <?php
+  include 'footer.php';
+  ?>
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

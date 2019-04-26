@@ -61,7 +61,7 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
   <!-- Custom styles for this template -->
   <link href="../css/agency.min.css" rel="stylesheet">
 
@@ -69,35 +69,11 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
 
 <body id="page-top">
 
+
   <!-- Navbar -->
-  <nav class="navbar navbar-dark navbar-expand-md bg-dark justify-content-between">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../profil/profil.php">
-              <?php
-              if (isset($_SESSION['img'])) {
-                echo "<img id='imgProfile' src=" . $_SESSION['img'] . ">";
-              } else {
-                echo $_SESSION['pseudo'];
-              } ?>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="deconnexionUser.php">Déconnexion</a>
-          </li>
-        </ul>
-      </div>
-      <a style="color: #fed136; font-size: 30px" href="../index.php" class="navbar-brand navbar-collapse">PixUs</a>
-      <div class="navbar-collapse collapse dual-nav w-50 order-2">
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar -->
+  <?php
+  include 'navbar.php';
+?>
 
   <section class="sectionProfil">
     <div class="container">
@@ -117,17 +93,21 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
 
             <h3 class="thin text-center">Changer de photo de profil</h3>
             <input name="profilPicture" type="file" /><br>
-            <button class="btn btn-danger" type="submit">Upload</button>
+            <button class="btn btn-warning" type="submit">Upload</button>
           </form>
 
         </div>
         <div class="col-md-6 offset-2 align-left">
-          <?php echo "<h3> Nom d'utilisateur : " . $infosProfil['userName'] . "</h3>" ?>
-          <?php echo "<h3> Adresse E-Mail : " . $infosProfil['email'] . "</h3>" ?>
+          <?php echo "<h3> Nom d'utilisateur : </h3> " . $infosProfil['userName']?>
+          <?php echo "<br>"?>
+          <?php echo "<br>"?>
+          <?php echo "<h3> Adresse E-Mail :</h3> " . $infosProfil['email']  ?>
+          <?php echo "<br>"?>
+          <?php echo "<br>"?>
           <?php echo "<h3> Bio : </h3><p>" . $infosProfil['bio'] . "</p>" ?>
           <form action="profilBioRedirect.php" method="POST">
             <input type="text" name="bio">
-            <input type="submit" value="Valider" />
+            <button class="btn btn-warning" type="submit">Valider</button>
           </form>
           <p>Modifie ta bio </p>
         </div>
@@ -173,7 +153,7 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
                         <div class="col-lg-8">
                         </div>
                         <div class="col-lg-4 text-right">
-                          <button class="btn btn-danger" type="submit">Upload</button>
+                          <button class="btn btn-warning" type="submit">Upload</button>
                         </div>
                       </div>
                     </form>
@@ -185,10 +165,9 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
 
 
           <h2 class="section-heading text-uppercase">Mes photos</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
       </div>
-      <div class="row">
+      <div class="row2">
 
 
         <?php
@@ -196,7 +175,7 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
         //boucle d'affichage des photos
         foreach ($userPicture as $picture) {
           echo "
-          <div class='col-md-4 col-sm-6 portfolio-item'>
+          <div class='portfolio-item item'>
           <a class='portfolio-link' data-toggle='modal' href='#portfolioModal" . $picture['id'] . "'>
             <div class='portfolio-hover'>
               <div class='portfolio-hover-content'>
@@ -258,14 +237,14 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
                 <form action=\"commentRedirections2.php\" method=\"POST\">
               <input type='hidden' name='idPicture' value=\"" . $picture['id'] . "\">
               <input required type=\"text\" name=\"commentaire\"><br><br>
-              <input class=\"btn btn-danger\" type=\"submit\" value=\"Ajouter un commentaire\" />
+              <input class=\"btn btn-warning\" type=\"submit\" value=\"Ajouter un commentaire\" />
               </form>
                   <li>Date: " . $picture['imgDate'] . "</li>
                 </ul>
                 
                 <form action=\"deletePicture.php\" method=\"POST\">
                 <input type='hidden' name='idPhoto' value=\"" . $picture['id'] . "\">
-                <input class=\"btn btn-danger\" type=\"submit\" value=\"Supprimer photo\" />
+                <input class=\"btn btn-warning\" type=\"submit\" value=\"Supprimer photo\" />
               </form>
                 
               </div>
@@ -282,44 +261,10 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
 
 
   <!-- Footer -->
-  <footer class="bg-dark">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Your Website 2019</span>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline quicklinks">
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <?php
+  include 'footer.php';
+  ?>
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
