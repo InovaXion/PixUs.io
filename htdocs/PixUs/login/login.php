@@ -50,7 +50,7 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <h3 class="thin text-center">Connexion</h3>
-              <p class="text-center text-muted">Déjà inscrit ? <a href="login.php">Login</a>
+              <p class="text-center text-muted">Tu es nouveau? Inscris-toi ? <a href="../index.php">Inscription</a>
               <hr>
 
               <form action="loginRedirect.php" method="POST">
@@ -93,83 +93,53 @@
   </header>
 
 
-
-  <!-- Team -->
-  <section class="bg-light" id="team">
+ <!-- Team -->
+ <section class="bg-light" id="team">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">Notre Team</h2>
+          <h3 class="section-subheading text-muted">Les deux personnes à l'origine de ce projet</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-            <h4>Kay Garland</h4>
-            <p class="text-muted">Lead Designer</p>
+            <img class="mx-auto rounded-circle" src="https://pbs.twimg.com/profile_images/950707603981651970/rNQ6TC7J_400x400.jpg" alt="">
+            <h4>Mghaoues Mathis</h4>
+            <p class="text-muted">Fondateur</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
+                <a target="_blank" href="https://twitter.com/M_InovaXion_M">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a target="_blank" href="https://fr-fr.facebook.com/M.InovaXion.M">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a target="_blank" href="https://www.linkedin.com/in/mathis-mghaoues-152332185/">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-            <h4>Larry Parker</h4>
-            <p class="text-muted">Lead Marketer</p>
+            <img class="mx-auto rounded-circle" src="../img/profilPictures/1mika.jpeg" alt="">
+            <h4>Mickael Wala</h4>
+            <p class="text-muted">Fondateur</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
+                <a target="_blank" href="https://www.facebook.com/mickael.wala">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-            <h4>Diana Pertersen</h4>
-            <p class="text-muted">Lead Developer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
+                <a target="_blank" href="https://www.linkedin.com/in/micka%C3%ABl-wala-13081994/">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
@@ -179,12 +149,12 @@
       </div>
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+          <p class="large text-muted">Projet qui a été effectuer dans le cadre de la formation Simplon</p>
+          <a href="https://simplon.co/roanne/"target="_blank" rel="noopener noreferrer"><img src="https://simplon.co/wp-content/uploads/2019/01/logo-simplon_roanne.png" alt=""></a>
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- Footer -->
   <footer class="bg-dark">

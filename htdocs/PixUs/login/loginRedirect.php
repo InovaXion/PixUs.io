@@ -25,7 +25,7 @@ $isPasswordCorrect = password_verify($mdp, $compteExiste['userPassword']);
 
 
 if (!$compteExiste) {
-    header('Location: ../login.php?error=unknowUser');
+    header('Location: login.php?error=unknowUser');
 } else {
     if ($isPasswordCorrect) {
         session_start();

@@ -114,9 +114,10 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
                   echo '<span class="text-danger">L\'image n\'est pas au bon format, veuillez mettre une image au format jpeg ou png </span>';
                 };
                 ?>
-            <label for="profilPicture"> Changer de photo de profil </label>
+
+            <h3 class="thin text-center">Changer de photo de profil</h3>
             <input name="profilPicture" type="file" /><br>
-            <input type="submit" value="Valider" />
+            <button class="btn btn-danger" type="submit">Upload</button>
           </form>
 
         </div>
@@ -188,12 +189,6 @@ $reponse2 = $bdd->prepare('SELECT comment, userName, commentDate  FROM comments 
         </div>
       </div>
       <div class="row">
-
-
-
-
-
-
 
 
         <?php
